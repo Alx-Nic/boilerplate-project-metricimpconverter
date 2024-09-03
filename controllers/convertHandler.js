@@ -9,7 +9,7 @@ function getNumFromFraction(input) {
   return num / denom;
 }
 
-const supportedUnits = ["gal", "L", "mi", "km", "lbs", "kg"];
+const supportedUnits = ["gal", "l", "mi", "km", "lbs", "kg"];
 
 function ConvertHandler() {
   this.getNum = function (input) {
@@ -28,7 +28,7 @@ function ConvertHandler() {
     const match = input.match(/[a-zA-Z]+$/);
 
     const isSupportedUnit =
-      supportedUnits.filter((x) => x === match[0]).length > 0;
+      supportedUnits.filter((x) => x === match[0].toLowerCase()).length > 0;
 
     if (!match || !isSupportedUnit) {
       return "invalid unit";
@@ -38,7 +38,8 @@ function ConvertHandler() {
   };
 
   this.getReturnUnit = function (unit) {
-    switch (unit) {
+    const testUnit = unit.toLowerCase();
+    switch (testUnit) {
       case "km":
         return "mi";
       case "gal":
@@ -47,7 +48,7 @@ function ConvertHandler() {
         return "kg";
       case "mi":
         return "km";
-      case "L":
+      case "l":
         return "gal";
       case "kg":
         return "lbs";
