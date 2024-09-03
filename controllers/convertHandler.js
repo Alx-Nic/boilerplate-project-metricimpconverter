@@ -26,15 +26,16 @@ function ConvertHandler() {
     if (!input) return "invalid unit";
 
     const match = input.match(/[a-zA-Z]+$/);
+    const matchUnit = match[0].toLowerCase();
 
     const isSupportedUnit =
-      supportedUnits.filter((x) => x === match[0].toLowerCase()).length > 0;
+      supportedUnits.filter((x) => x === matchUnit).length > 0;
 
     if (!match || !isSupportedUnit) {
       return "invalid unit";
     }
 
-    return match[0] == "l" ? "L" : match[0];
+    return matchUnit == "l" ? "L" : matchUnit;
   };
 
   this.getReturnUnit = function (unit) {
