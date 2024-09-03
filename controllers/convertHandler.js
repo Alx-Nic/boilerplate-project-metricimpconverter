@@ -34,7 +34,7 @@ function ConvertHandler() {
       return "invalid unit";
     }
 
-    return match[0];
+    return match[0] == "l" ? "L" : match[0];
   };
 
   this.getReturnUnit = function (unit) {
