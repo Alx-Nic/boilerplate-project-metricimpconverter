@@ -34,8 +34,8 @@ suite("Unit Tests", function () {
   });
 
   test("convertHandler should return the correct return unit for each valid input unit.", () => {
-    let input = ["gal", "l", "mi", "km", "lbs", "kg"];
-    let expect = ["L", "gal", "km", "mi", "kg", "lbs"];
+    let input = ["gal", "L", "l", "mi", "km", "lbs", "kg"];
+    let expect = ["L", "gal", "gal", "km", "mi", "kg", "lbs"];
     input.forEach(function (ele, i) {
       assert.equal(convertHandler.getReturnUnit(ele), expect[i]);
     });
