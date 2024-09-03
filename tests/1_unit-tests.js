@@ -55,9 +55,7 @@ suite("Unit Tests", function () {
       assert.equal(convertHandler.spellOutUnit(ele), expect[i]);
     });
   });
-});
 
-suite("getUnitTests", function () {
   test("convertHandler should correctly read each valid input unit.", function () {
     let input = ["gal", "l", "L", "mi", "km", "lbs", "kg"];
     let expect = ["gal", "L", "L", "mi", "km", "lbs", "kg"];
@@ -70,9 +68,7 @@ suite("getUnitTests", function () {
   test("convertHandler should correctly return an error for an invalid input unit.", function () {
     assert.equal(convertHandler.getUnit("5LL"), "invalid unit");
   });
-});
 
-suite("convertHandler", function () {
   test("convertHandler should correctly convert gal to L", function () {
     assert.equal(convertHandler.convert(5, "gal"), 18.92705);
   });
